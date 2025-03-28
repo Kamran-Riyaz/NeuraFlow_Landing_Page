@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2304D1C5'/><path d='M30,30 L30,70 M50,20 L50,80 M70,30 L70,70 M20,50 L80,50' stroke='%2301312C' stroke-width='8' stroke-linecap='round'/><circle cx='30' cy='30' r='5' fill='%2301312C'/><circle cx='30' cy='70' r='5' fill='%2301312C'/><circle cx='50' cy='20' r='5' fill='%2301312C'/><circle cx='50' cy='80' r='5' fill='%2301312C'/><circle cx='70' cy='30' r='5' fill='%2301312C'/><circle cx='70' cy='70' r='5' fill='%2301312C'/><circle cx='20' cy='50' r='5' fill='%2301312C'/><circle cx='80' cy='50' r='5' fill='%2301312C'/></svg>"
+      type="image/svg+xml"
+    />
+    <title>NeuraFlow - Revolutionize Work with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              float: "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <svg
+                class="h-8 w-8 text-teal-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              <span
+                class="ml-2 text-xl font-bold bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent"
+                >NeuraFlow</span
+              >
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-4">
+              <a
+                href="#features"
+                class="px-3 py-2 rounded-md text-sm font-medium hover:text-teal-500 transition-colors"
+                >Features</a
+              >
+              <a
+                href="#testimonials"
+                class="px-3 py-2 rounded-md text-sm font-medium hover:text-teal-500 transition-colors"
+                >Testimonials</a
+              >
+              <a
+                href="#pricing"
+                class="px-3 py-2 rounded-md text-sm font-medium hover:text-teal-500 transition-colors"
+                >Pricing</a
+              >
+              <button
+                id="theme-toggle"
+                class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  ></path>
+                </svg>
+              </button>
+              <a
+                href="#pricing"
+                class="ml-4 px-4 py-2 bg-gradient-to-r from-teal-500 to-blue-600 text-white text-sm font-medium rounded-md hover:from-teal-600 hover:to-blue-700 transition-all transform hover:scale-105"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+            >
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#features"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-teal-500 transition-colors"
+            >Features</a
+          >
+          <a
+            href="#testimonials"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-teal-500 transition-colors"
+            >Testimonials</a
+          >
+          <a
+            href="#pricing"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-teal-500 transition-colors"
+            >Pricing</a
+          >
+          <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-800">
+            <div class="flex items-center px-5">
+              <button
+                id="mobile-theme-toggle"
+                class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                <svg
+                  id="mobile-theme-toggle-dark-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="mobile-theme-toggle-light-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  ></path>
+                </svg>
+              </button>
+              <a
+                href="#pricing"
+                class="ml-4 px-4 py-2 bg-gradient-to-r from-teal-500 to-blue-600 text-white text-sm font-medium rounded-md hover:from-teal-600 hover:to-blue-700 transition-all"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 opacity-90"
+      ></div>
+      <div class="absolute inset-0 opacity-20 dark:opacity-10">
+        <div
+          class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxOGE4OTYiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNMzYgMzRjMC0xLjEuOS0yIDItMnMyIC45IDIgMnY0YzAgMS4xLS45IDItMiAycy0yLS45LTItMnYtNHptMjQtMjJjMS4xIDAgMiAuOSAyIDJzLS45IDItMiAyaC00Yy0xLjEgMC0yLS45LTItMnMuOS0yIDItMmg0em0tMTggMjRjMC0xLjEuOS0yIDItMnMyIC45IDIgMnY0YzAgMS4xLS45IDItMiAycy0yLS45LTItMnYtNHptLTI0LTJjMS4xIDAgMiAuOSAyIDJ2NGMwIDEuMS0uOSAyLTIgMnMtMi0uOS0yLTJ2LTRjMC0xLjEuOS0yIDItMnptMTYtMTZjMS4xIDAgMiAuOSAyIDJzLS45IDItMiAyaC00Yy0xLjEgMC0yLS45LTItMnMuOS0yIDItMmg0eiIvPjwvZz48L2c+PC9zdmc+')]"
+        ></div>
+      </div>
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32"
+      >
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+            <span class="block">Revolutionize Work</span>
+            <span
+              class="block bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent"
+              >with AI</span
+            >
+          </h1>
+          <p
+            class="mt-6 max-w-lg mx-auto text-xl text-gray-600 dark:text-gray-300"
+          >
+            NeuraFlow empowers teams with intelligent automation and real-time
+            insights to transform how you work.
+          </p>
+          <div class="mt-10">
+            <a
+              href="#pricing"
+              class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300"
+            >
+              Join the Beta
+            </a>
+            <a
+              href="#features"
+              class="ml-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-teal-700 dark:text-teal-300 hover:text-teal-500 transition-colors"
+            >
+              Learn more
+            </a>
+          </div>
+        </div>
+        <div class="mt-16 flex justify-center">
+          <div class="relative w-full max-w-4xl">
+            <div
+              class="absolute -inset-2 bg-gradient-to-r from-teal-400 to-blue-500 rounded-lg blur opacity-25"
+            ></div>
+            <div
+              class="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden"
+            >
+              <div
+                class="h-64 bg-gradient-to-br from-teal-100 to-blue-100 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center"
+              >
+                <div class="text-center p-8">
+                  <svg
+                    class="mx-auto h-12 w-12 text-teal-500 animate-float"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                  <h3
+                    class="mt-2 text-lg font-medium text-gray-900 dark:text-white"
+                  >
+                    AI-Powered Dashboard
+                  </h3>
+                  <p class="mt-1 text-gray-600 dark:text-gray-300">
+                    Experience the future of work with NeuraFlow's intelligent
+                    interface
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-teal-600 dark:text-teal-400 font-semibold tracking-wide uppercase"
+          >
+            Features
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+          >
+            AI that works for you
+          </p>
+          <p
+            class="mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 lg:mx-auto"
+          >
+            NeuraFlow's advanced capabilities help you focus on what matters
+            most.
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Feature 1 -->
+            <div class="pt-6">
+              <div
+                class="flow-root bg-white dark:bg-gray-800 rounded-lg px-6 pb-8 h-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div class="-mt-6">
+                  <div>
+                    <span
+                      class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-blue-600 rounded-md shadow-lg"
+                    >
+                      <svg
+                        class="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <h3
+                    class="mt-8 text-lg font-medium text-gray-900 dark:text-white tracking-tight"
+                  >
+                    Real-Time Insights
+                  </h3>
+                  <p class="mt-5 text-base text-gray-600 dark:text-gray-300">
+                    Get actionable intelligence from your data with our advanced
+                    AI models that learn and adapt to your business needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="pt-6">
+              <div
+                class="flow-root bg-white dark:bg-gray-800 rounded-lg px-6 pb-8 h-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div class="-mt-6">
+                  <div>
+                    <span
+                      class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-blue-600 rounded-md shadow-lg"
+                    >
+                      <svg
+                        class="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <h3
+                    class="mt-8 text-lg font-medium text-gray-900 dark:text-white tracking-tight"
+                  >
+                    No-Code Automation
+                  </h3>
+                  <p class="mt-5 text-base text-gray-600 dark:text-gray-300">
+                    Build powerful workflows without writing a single line of
+                    code. Our visual editor makes automation accessible to
+                    everyone.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="pt-6">
+              <div
+                class="flow-root bg-white dark:bg-gray-800 rounded-lg px-6 pb-8 h-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div class="-mt-6">
+                  <div>
+                    <span
+                      class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-blue-600 rounded-md shadow-lg"
+                    >
+                      <svg
+                        class="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <h3
+                    class="mt-8 text-lg font-medium text-gray-900 dark:text-white tracking-tight"
+                  >
+                    Enterprise Security
+                  </h3>
+                  <p class="mt-5 text-base text-gray-600 dark:text-gray-300">
+                    Military-grade encryption and compliance with the strictest
+                    data protection regulations to keep your information safe.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="pt-6">
+              <div
+                class="flow-root bg-white dark:bg-gray-800 rounded-lg px-6 pb-8 h-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div class="-mt-6">
+                  <div>
+                    <span
+                      class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-blue-600 rounded-md shadow-lg"
+                    >
+                      <svg
+                        class="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <h3
+                    class="mt-8 text-lg font-medium text-gray-900 dark:text-white tracking-tight"
+                  >
+                    Predictive Analytics
+                  </h3>
+                  <p class="mt-5 text-base text-gray-600 dark:text-gray-300">
+                    Anticipate trends and make data-driven decisions with our
+                    machine learning models that get smarter over time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="pt-6">
+              <div
+                class="flow-root bg-white dark:bg-gray-800 rounded-lg px-6 pb-8 h-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div class="-mt-6">
+                  <div>
+                    <span
+                      class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-blue-600 rounded-md shadow-lg"
+                    >
+                      <svg
+                        class="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <h3
+                    class="mt-8 text-lg font-medium text-gray-900 dark:text-white tracking-tight"
+                  >
+                    Seamless Integrations
+                  </h3>
+                  <p class="mt-5 text-base text-gray-600 dark:text-gray-300">
+                    Connect with your favorite tools through our extensive API
+                    library and pre-built connectors for popular platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="pt-6">
+              <div
+                class="flow-root bg-white dark:bg-gray-800 rounded-lg px-6 pb-8 h-full shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <div class="-mt-6">
+                  <div>
+                    <span
+                      class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-blue-600 rounded-md shadow-lg"
+                    >
+                      <svg
+                        class="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <h3
+                    class="mt-8 text-lg font-medium text-gray-900 dark:text-white tracking-tight"
+                  >
+                    24/7 AI Assistant
+                  </h3>
+                  <p class="mt-5 text-base text-gray-600 dark:text-gray-300">
+                    Get instant answers to your questions with our
+                    always-available AI assistant trained on your business data.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-teal-600 dark:text-teal-400 font-semibold tracking-wide uppercase"
+          >
+            Trusted by innovators
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+          >
+            What our customers say
+          </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <img
+                  class="h-12 w-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="David Johnson"
+                />
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                  David Johnson
+                </h3>
+                <p class="text-teal-600 dark:text-teal-400">CTO, TechForward</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                "NeuraFlow transformed our data analysis process. What used to
+                take weeks now happens in real-time, giving us a competitive
+                edge."
+              </p>
+            </div>
+            <div class="mt-4 flex">
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <img
+                  class="h-12 w-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="Michael Chen"
+                />
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                  Michael Chen
+                </h3>
+                <p class="text-teal-600 dark:text-teal-400">CEO, DataSphere</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                "The no-code automation has enabled our non-technical teams to
+                build solutions themselves, reducing IT backlog by 70%."
+              </p>
+            </div>
+            <div class="mt-4 flex">
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <img
+                  class="h-12 w-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="David Rodriguez"
+                />
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                  David Rodriguez
+                </h3>
+                <p class="text-teal-600 dark:text-teal-400">
+                  Director of AI, GlobalCorp
+                </p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                "NeuraFlow's predictive analytics helped us identify a market
+                shift 3 months before our competitors. Game-changing
+                technology."
+              </p>
+            </div>
+            <div class="mt-4 flex">
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                class="h-5 w-5 text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Logos -->
+        <div class="mt-16">
+          <p
+            class="text-center text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 tracking-wider"
+          >
+            Trusted by leading companies
+          </p>
+          <div
+            class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6"
+          >
+            <div class="col-span-1 flex justify-center">
+              <div
+                class="h-12 flex items-center text-gray-400 dark:text-gray-500 font-bold text-xl"
+              >
+                TechForward
+              </div>
+            </div>
+            <div class="col-span-1 flex justify-center">
+              <div
+                class="h-12 flex items-center text-gray-400 dark:text-gray-500 font-bold text-xl"
+              >
+                DataSphere
+              </div>
+            </div>
+            <div class="col-span-1 flex justify-center">
+              <div
+                class="h-12 flex items-center text-gray-400 dark:text-gray-500 font-bold text-xl"
+              >
+                GlobalCorp
+              </div>
+            </div>
+            <div class="col-span-1 flex justify-center">
+              <div
+                class="h-12 flex items-center text-gray-400 dark:text-gray-500 font-bold text-xl"
+              >
+                InnoVate
+              </div>
+            </div>
+            <div
+              class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
+            >
+              <div
+                class="h-12 flex items-center text-gray-400 dark:text-gray-500 font-bold text-xl"
+              >
+                NextGen
+              </div>
+            </div>
+            <div class="col-span-1 flex justify-center">
+              <div
+                class="h-12 flex items-center text-gray-400 dark:text-gray-500 font-bold text-xl"
+              >
+                AI Labs
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+          <h2
+            class="text-base text-teal-600 dark:text-teal-400 font-semibold tracking-wide uppercase"
+          >
+            Pricing
+          </h2>
+          <p
+            class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+          >
+            Simple, transparent pricing
+          </p>
+          <p
+            class="mt-4 max-w-2xl text-xl text-gray-600 dark:text-gray-300 lg:mx-auto"
+          >
+            Choose the plan that fits your needs. No hidden fees.
+          </p>
+        </div>
+
+        <div
+          class="mt-16 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8"
+        >
+          <!-- Free Tier -->
+          <div
+            class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-teal-500 dark:hover:border-teal-500 transition-colors duration-300 transform hover:-translate-y-1"
+          >
+            <div class="px-6 py-8">
+              <h3 class="text-2xl font-medium text-gray-900 dark:text-white">
+                Starter
+              </h3>
+              <p class="mt-4 text-gray-600 dark:text-gray-300">
+                Perfect for individuals and small teams
+              </p>
+              <div class="mt-6 flex items-baseline">
+                <span
+                  class="text-4xl font-extrabold text-gray-900 dark:text-white"
+                  >$0</span
+                >
+                <span
+                  class="ml-1 text-lg font-medium text-gray-600 dark:text-gray-300"
+                  >/month</span
+                >
+              </div>
+              <a
+                href="#"
+                class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gray-100 dark:bg-gray-700 text-teal-600 dark:text-teal-400 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              >
+                Get started for free
+              </a>
+            </div>
+            <div
+              class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 dark:bg-gray-700/50"
+            >
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Basic AI features
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Up to 1,000 operations/month
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Community support
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Pro Tier -->
+          <div
+            class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800 border-2 border-teal-500 transform scale-105 z-10"
+          >
+            <div class="px-6 py-8">
+              <div class="flex justify-between items-center">
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-white">
+                  Pro
+                </h3>
+                <span
+                  class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200"
+                >
+                  Most popular
+                </span>
+              </div>
+              <p class="mt-4 text-gray-600 dark:text-gray-300">
+                For growing businesses and teams
+              </p>
+              <div class="mt-6 flex items-baseline">
+                <span
+                  class="text-4xl font-extrabold text-gray-900 dark:text-white"
+                  >$29</span
+                >
+                <span
+                  class="ml-1 text-lg font-medium text-gray-600 dark:text-gray-300"
+                  >/month</span
+                >
+              </div>
+              <a
+                href="#"
+                class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gradient-to-r from-teal-500 to-blue-600 text-white hover:from-teal-600 hover:to-blue-700 transition-all"
+              >
+                Start 14-day trial
+              </a>
+            </div>
+            <div
+              class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 dark:bg-gray-700/50"
+            >
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Advanced AI features
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Up to 10,000 operations/month
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Priority support
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    API access
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Basic analytics
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Enterprise Tier -->
+          <div
+            class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-teal-500 dark:hover:border-teal-500 transition-colors duration-300 transform hover:-translate-y-1"
+          >
+            <div class="px-6 py-8">
+              <h3 class="text-2xl font-medium text-gray-900 dark:text-white">
+                Enterprise
+              </h3>
+              <p class="mt-4 text-gray-600 dark:text-gray-300">
+                For large organizations
+              </p>
+              <div class="mt-6 flex items-baseline">
+                <span
+                  class="text-4xl font-extrabold text-gray-900 dark:text-white"
+                  >Custom</span
+                >
+              </div>
+              <a
+                href="#"
+                class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gray-100 dark:bg-gray-700 text-teal-600 dark:text-teal-400 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              >
+                Contact sales
+              </a>
+            </div>
+            <div
+              class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 dark:bg-gray-700/50"
+            >
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    All Pro features
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Unlimited operations
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    24/7 dedicated support
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Advanced security
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <svg
+                    class="h-6 w-6 text-teal-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <p class="ml-3 text-base text-gray-700 dark:text-gray-300">
+                    Custom integrations
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-teal-500 to-blue-600">
+      <div
+        class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
+      >
+        <h2
+          class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+        >
+          <span class="block">Ready to revolutionize your workflow?</span>
+          <span class="block text-teal-100">Start your free trial today.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+          <div class="inline-flex rounded-md shadow">
+            <a
+              href="#"
+              class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-teal-50 transition-colors"
+            >
+              Get started
+            </a>
+          </div>
+          <div class="ml-3 inline-flex rounded-md shadow">
+            <a
+              href="#"
+              class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 bg-opacity-60 hover:bg-opacity-70 transition-colors"
+            >
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="space-y-8 xl:col-span-1">
+            <div class="flex items-center">
+              <svg
+                class="h-8 w-8 text-teal-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              <span
+                class="ml-2 text-xl font-bold bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent"
+                >NeuraFlow</span
+              >
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-base">
+              Revolutionizing work with intelligent AI solutions.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
+              >
+                <span class="sr-only">X</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
+              >
+                <span class="sr-only">GitHub</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
+              >
+                <span class="sr-only">LinkedIn</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3
+                  class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-wider uppercase"
+                >
+                  Product
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      API
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Integrations
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3
+                  class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-wider uppercase"
+                >
+                  Company
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3
+                  class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-wider uppercase"
+                >
+                  Resources
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Documentation
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Guides
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Webinars
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Community
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3
+                  class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-wider uppercase"
+                >
+                  Legal
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Privacy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Terms
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-base text-gray-600 dark:text-gray-300 hover:text-teal-500 transition-colors"
+                    >
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
+          <p class="text-base text-gray-500 dark:text-gray-400 text-center">
+            &copy; <span class="current-year">2025</span> NeuraFlow, Inc. All
+            rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Dark mode toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
+      const themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      const themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
+      const mobileThemeToggleDarkIcon = document.getElementById(
+        "mobile-theme-toggle-dark-icon"
+      );
+      const mobileThemeToggleLightIcon = document.getElementById(
+        "mobile-theme-toggle-light-icon"
+      );
+
+      // Change the icons inside the button based on previous settings
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+        mobileThemeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+        mobileThemeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      getYear();
+      function getYear() {
+        const yearSpan = document.querySelector(".current-year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      }
+
+      const toggleTheme = () => {
+        // Toggle icons
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+        mobileThemeToggleDarkIcon.classList.toggle("hidden");
+        mobileThemeToggleLightIcon.classList.toggle("hidden");
+
+        // If set via local storage previously
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+        } else {
+          // If NOT set via local storage previously
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      };
+
+      themeToggle.addEventListener("click", toggleTheme);
+      mobileThemeToggle.addEventListener("click", toggleTheme);
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
